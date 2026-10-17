@@ -4,7 +4,8 @@
   "description": "CareerCompass AI-Adaptive Onboarding Engine Backend",
   "main": "dist/server.js",
   "scripts": {
-    "build": "tsc",
+    "build": "prisma generate && tsc",
+    "postinstall": "prisma generate",
     "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
     "start": "node dist/server.js",
     "prisma:generate": "prisma generate",
