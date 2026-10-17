@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useApp } from "@/lib/context";
 import { motion } from "framer-motion";
+import GoogleLoginButton from "@/components/GoogleLoginButton";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -52,9 +53,21 @@ export default function LoginPage() {
         <h2 className="text-3xl font-extrabold text-primary-container tracking-tight mb-2 relative z-10">
           Welcome Back
         </h2>
-        <p className="text-on-surface-variant text-sm mb-8 relative z-10">
+        <p className="text-on-surface-variant text-sm mb-6 relative z-10">
           Log in to continue building your roadmap.
         </p>
+
+        {/* Google Authentication */}
+        <div className="relative z-10 mb-6">
+          <GoogleLoginButton label="Sign in with Google" redirectTo="/student-verification" />
+          <div className="flex items-center gap-3 my-5">
+            <div className="h-[1px] flex-1 bg-outline-variant/30" />
+            <span className="text-[11px] text-on-surface-variant uppercase tracking-wider font-semibold">
+              or continue with email
+            </span>
+            <div className="h-[1px] flex-1 bg-outline-variant/30" />
+          </div>
+        </div>
 
         <form onSubmit={handleLogin} className="space-y-5 relative z-10">
           <div className="space-y-1.5">

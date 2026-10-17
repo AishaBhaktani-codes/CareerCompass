@@ -35,7 +35,6 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-6 ml-10">
             {navItems.map((item) => {
               const isActive =
-                (item.href === "/student-verification" && (pathname === "/student-verification" || pathname === "/")) ||
                 pathname === item.href ||
                 (item.href === "/module/1" && pathname.startsWith("/module"));
               return (
@@ -95,7 +94,6 @@ export default function Navbar() {
       <nav className="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-slate-900/90 backdrop-blur-xl shadow-[0_-4px_24px_rgba(0,0,0,0.4)] rounded-t-xl">
         {navItems.map((item) => {
           const isActive =
-            (item.href === "/student-verification" && (pathname === "/student-verification" || pathname === "/")) ||
             pathname === item.href ||
             (item.href === "/module/1" && pathname.startsWith("/module"));
           return (
