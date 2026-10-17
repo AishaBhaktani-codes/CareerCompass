@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation";
 import { useApp } from "@/lib/context";
 import { roleOptions } from "@/lib/data";
 import { motion } from "framer-motion";
-import GoogleLoginButton from "@/components/GoogleLoginButton";
 
 export default function SignupPage() {
   const router = useRouter();
@@ -54,21 +53,9 @@ export default function SignupPage() {
         <h2 className="text-3xl font-extrabold text-primary-container tracking-tight mb-2 relative z-10">
           Create Account
         </h2>
-        <p className="text-on-surface-variant text-sm mb-6 relative z-10">
+        <p className="text-on-surface-variant text-sm mb-8 relative z-10">
           Join CareerCompass to build your personalized technical career roadmap.
         </p>
-
-        {/* Google Authentication */}
-        <div className="relative z-10 mb-6">
-          <GoogleLoginButton label="Sign up with Google" redirectTo="/student-verification" />
-          <div className="flex items-center gap-3 my-5">
-            <div className="h-[1px] flex-1 bg-outline-variant/30" />
-            <span className="text-[11px] text-on-surface-variant uppercase tracking-wider font-semibold">
-              or register with email
-            </span>
-            <div className="h-[1px] flex-1 bg-outline-variant/30" />
-          </div>
-        </div>
 
         <form onSubmit={handleSignup} className="space-y-5 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
